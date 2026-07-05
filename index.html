@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Tools Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- MathJax for rendering professional textbook equations -->
+
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Calculators</h2>
+        <nav id="calc-menu">
+            <!-- Calculator links will be injected here automatically -->
+        </nav>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard">
+        <header>
+            <h1 id="calc-title">Select a Calculator</h1>
+            <p id="calc-description" class="subtitle">Please choose an engineering tool from the sidebar.</p>
+        </header>
+
+        <div id="calculator-content" style="display: none;">
+            
+            <!-- Documentation & Physics Section -->
+            <div class="card doc-card">
+                <h3>Governing Equations</h3>
+                <div id="calc-equations" class="math-container"></div>
+            </div>
+
+            <div class="grid layout-grid">
+                <!-- Inputs Column -->
+                <div class="card">
+                    <h3>System Inputs</h3>
+                    <div id="inputs-container"></div>
+                </div>
+
+                <!-- Outputs Column -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h3 style="margin: 0;">Results</h3>
+                        <button class="btn btn-export" onclick="exportData()">Export CSV</button>
+                    </div>
+                    <div id="outputs-container" class="outputs-grid"></div>
+                    
+                    <!-- Dynamic Alerts Container -->
+                    <div id="alerts-container"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Load the Master Framework Script -->
+<script src="app.js"></script>
+
+<!-- Add your individual calculator modules here as you build them -->
+<script src="calculators/pad_thermal.js"></script>
+
+</body>
+</html>
